@@ -10,7 +10,8 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_location LOCATION,
+    last_longitude DECIMAL(7,4),
+    last_latitude DECIMAL(7,4),
     is_active BOOLEAN DEFAULT TRUE,
     auth_method VARCHAR(50) CHECK (auth_method IN ('password', 'google', 'facebook', 'apple')) NOT NULL
 );
