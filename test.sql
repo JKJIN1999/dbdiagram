@@ -53,7 +53,7 @@ CREATE TABLE Posts (
     image_url TEXT[],
     video_url TEXT[],
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	flagged BOOLEAN DEFAULT 0
+    flagged BOOLEAN DEFAULT FALSE
 );
 
 -- comments table
@@ -63,7 +63,7 @@ CREATE TABLE Comments (
     user_id INT REFERENCES Users(user_id),
     content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	visible BOOLEAN DEFAULT 1
+    visible BOOLEAN DEFAULT TRUE
 );
 
 -- likes table
